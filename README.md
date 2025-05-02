@@ -1,5 +1,7 @@
 This repository contains the code for the paper "Fast nonlinear integration drives accurate encoding of input information in large multiscale systems" (arXiv:2411.11710).
 
-The modules in this repository contain the code for sampling the joint distribution of an input-processing-output system, where each of the three components is a multidimensional linear unit evolving on a different timescale. Utilities for computing the mutual information between the input and output in different cases are also provided, as well as the code to simulate the Langevin dynamics of the system. The code is written in Python and uses Numba for faster numerical computations.
+The modules in this repository contain the code for sampling the exact joint distribution of an input-processing-output system, where each of the three components is a multidimensional linear unit evolving on a different timescale. Interactions between the units are nonlinear, with a tanh activation function, and implement two different types of interaction schemes: nonlinear integration, where the incoming signals are first summed and then passed through the activation function, and nonlinear summation, where the incoming signals are first passed through the activation function and then summed. The code also implements a direct input-output system for comparison.
+
+Utilities for computing the mutual information between the input and output in different cases are also provided, as well as the code to simulate the Langevin dynamics of the system. The code is written in Python and uses Numba for faster numerical computations.
 
 The notebooks provide basic examples of how to use the modules and how to compute the mutual information between the input and output of the system.
